@@ -169,5 +169,6 @@ Cистема для бектестингу алгоритмічних торг�
 
 Контакти для зворотного зв'язку та підтримки.
 
-- Email: diamfedorenkoznO@gmail.com
+- Email: diamfedorenkozno@gmail.com
+- telegram: @dimonfedoren
 - GitHub: [DimaFedor](https://github.com/DimaFedor)
