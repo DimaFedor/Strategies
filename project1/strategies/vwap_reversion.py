@@ -55,7 +55,7 @@ class VWAPReversionStrategy(StrategyBase):
         self.filtered_close = close
         return entries.astype(int) - exits.astype(int)
 
-    def run_backtest(self) -> pd.DataFrame:
+    def run_backtest(self):
         """
         Виконує бектест стратегії.
 
@@ -63,16 +63,20 @@ class VWAPReversionStrategy(StrategyBase):
         """
         if self.signals is None:
             self.generate_signals()
-
+        # ЯКЩО ПОТРІБНО ЗРОБИТИ СТАТИЧНИЙ init_cash просто розкоментуйте рядки
+        # total_cash = 100  # Загальна сума
+        # symbols = self.filtered_close.columns  # Всі активи
+        # cash_per_asset = total_cash / len(symbols)  # Розподіл на кожен акт
         entries, exits = self.signals
 
         self.portfolio = vbt.Portfolio.from_signals(
             close=self.filtered_close,
             entries=entries,
             exits=exits,
-            init_cash=1000,
+            # init_cash=pd.Series(cash_per_asset, index=symbols),
+            init_cash=10,  # По 10 одиниць для кожного активу, сумарний 1000
             fees=0.001,
-            slippage=0.001,
+            slippage=0.0011,
             freq="1min"
         )
 
