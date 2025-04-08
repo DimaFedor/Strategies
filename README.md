@@ -48,7 +48,7 @@ Cистема для бектестингу алгоритмічних торг�
 
 1. Клонуйте репозиторій:
    ```bash
-   git clone https://github.com/DimaFedor/TestTask_final
+   git clone https://github.com/DimaFedor/Strategies
    ```
 2. Перейдіть до директорії проекту:
    ```bash
